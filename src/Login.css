@@ -1,0 +1,25 @@
+.login {
+  display: flex;
+  background-color: white;
+  height: 100vh;
+}
+.login__container {
+  margin: auto;
+  border: 1px solid grey;
+  padding: 20px;
+  box-shadow: 5px 5px 7px grey;
+}
+.login__button {
+  width: 102%;
+  background-color: rgb(15, 146, 221);
+  border: none;
+  height: 25px;
+  border-radius: 2px;
+  color: white;
+  outline: none;
+}
+.login__container > form > input {
+  height: 30px;
+  margin-bottom: 10px;
+  width: 98%;
+}

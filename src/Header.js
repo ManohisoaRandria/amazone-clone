@@ -4,10 +4,18 @@ import { Link } from "react-router-dom";
 import SearchIcon from "@material-ui/icons/Search";
 import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
 import { useStateValue } from "./StateProvider";
+// import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 function Header() {
-  const [{ basket }] = useStateValue();
-
+  const [{ basket }, dispatch] = useStateValue();
+  // const history = useHistory();
+  function LOGOUT(e) {
+    e.preventDefault();
+    dispatch({
+      type: "LOGOUT",
+    });
+    // history.push("/login");
+  }
   return (
     <nav className="header">
       {/* logo */}
@@ -37,12 +45,12 @@ function Header() {
             <span className="header__optionTwo">& Orders</span>
           </div>
         </Link>
-        <Link to="/" className="header__link">
+        <div onClick={LOGOUT} className="header__link">
           <div className="header__option">
             <span className="header__optionOne">Your</span>
             <span className="header__optionTwo">Prime</span>
           </div>
-        </Link>
+        </div>
         <Link to="/checkout" className="header__link">
           <div className="header__optionBasket">
             <ShoppingBasketIcon />

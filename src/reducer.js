@@ -15,6 +15,16 @@ export const basketSomme = (basket) =>
   basket?.reduce((amount, item) => item.price + amount, 0);
 function reducer(state, action) {
   switch (action.type) {
+    case "LOGIN":
+      return {
+        ...state,
+        user: action.user,
+      };
+    case "LOGOUT":
+      return {
+        ...state,
+        user: null,
+      };
     case "ADD_TO_BASKET":
       //mamerina anle zavatra vao2 ao amle data layer
       // de lasa iny ndray no izy
